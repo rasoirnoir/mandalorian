@@ -7,7 +7,7 @@ const URL = "https://swapi.dev/api";
  * @param {string} endpoint l'endpoint à interroger (ex: planets)
  * @param {function} callback La fonction qui traitera la réponse JSON en retour
  */
-const api_call = (endpoint, callback) => {
+export const api_call = (endpoint, callback) => {
     fetch(`${URL}/${endpoint}`)
         .then(response => {
             return response.json();
@@ -16,3 +16,4 @@ const api_call = (endpoint, callback) => {
             callback(jsonResp);
         });
 }
+
