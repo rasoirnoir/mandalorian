@@ -29,3 +29,12 @@
     text-align: center;
     text-decoration: none;
 }
+
+#background-films {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment : fixed;
+    background-image: url("../assets/img/backgroung\ mando.jpg");
+
+}
