@@ -52,7 +52,7 @@ export const createPagination = (prevUrl, nextUrl, elementParent, remplissage) =
     if (prevUrl == null) firstPage = true;
     if (nextUrl == null) lastPage = true;
     let previousButton = `<button id="prevButton">Page précédente</button>`;
-    let currentButton = `${currentPage}`;
+    let currentButton = `<span style="color:#ccc;">${currentPage}</span>`;
     let nextButton = `<button id="nextButton">Page suivante</button>`;
 
     elementParent.innerHTML += previousButton;

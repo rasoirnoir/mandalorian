@@ -33,9 +33,9 @@ function remplissage(results) {
 
 
         planetes.innerHTML +=
-            `<section class="resultat">
-            <h1 class="titreAccordeon">${nom}</h1>
-            <div class="accordeon">
+            `<section class="resultat accordeon_item">
+            <h1 class="accordeon_item_header">${nom}</h1>
+            <div class="accordeon_item_body">
                 <div class="1">
                     <p>${terrain}</p>
                     <p>${climate}</p>
@@ -45,6 +45,13 @@ function remplissage(results) {
                 <div class="3">${tabFilms}</div>
             </div>
         </section>`;
+    }
+
+    const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
+    for (item of accordeonItemHeader) {
+        item.addEventListener("click", (event) => {
+            item.classList.toggle("active");
+        });
     }
 
     //Pagination
