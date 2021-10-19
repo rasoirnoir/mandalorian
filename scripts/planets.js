@@ -6,6 +6,8 @@ console.log('planet.js loaded');
 
 function remplissage(results){
 
+    planetes.innerHTML = "";
+
     const previousUrl = results.previous;
     const nextUrl = results.next;
     const tabResults = results.results;
@@ -17,7 +19,7 @@ function remplissage(results){
         const terrain = resultPlanet.terrain;
         const population = resultPlanet.population;
 
-        const tabResidents = resultPLanet.residents;
+        const tabResidents = resultPlanet.residents;
         //Problème de requêtes asyncrones
         // let tabResidents = [];
         // for(index in resultPlanet.residents){
@@ -29,18 +31,24 @@ function remplissage(results){
         // console.log(`nom des résidents : ${tabResidents}`);
         const tabFilms = resultPlanet.films;
 
+
+        planetes.innerHTML += 
+        `<section class="resultat">
+            <h1 class="titreAccordeon">${nom}</h1>
+            <div class="accordeon">
+                <div class="1">
+                    <p>${terrain}</p>
+                    <p>${climate}</p>
+                    <p>${diametre}Km</p>
+                </div>
+                <div class="2">${tabResidents}</div>
+                <div class="3">${tabFilms}</div>
+            </div>
+        </section>`;
     }
 
+    //Pagination
 
-    planetes.innerHTML = 
-    `<section class="resultat">
-    <h1 class="titreAccordeon"></h1>
-    <div class="accordeon">
-        <div class="1">Prout 1</div>
-        <div class="2">Prout 2</div>
-        <div class="3">Prout 3</div>
-    </div>
-</section>`;
 }
 
 api_call(API_URL + "/planets", remplissage);
