@@ -46,7 +46,7 @@
 }
 
 body{
-    background-image: url("../assets/imgs/starry_sky.jpg")   
+    background-image: url("../assets/imgs/starry_sky.jpg");
 }
 
 div.image-films {
@@ -61,9 +61,30 @@ div.image-films {
     color : #FFF;
     float: left; 
     margin-top : 200px;
+    margin-left:-350px;
 }
 
-#deploiement-films {
+#deploiement-films2 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films3 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films4 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films5 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films6 {
     color : #000;
     float: left; 
     margin-top : 200px;
