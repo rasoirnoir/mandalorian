@@ -1,4 +1,4 @@
-import { api_call, API_URL, getPage } from "./util";
+import { api_call, API_URL, createPagination } from "./util";
 
 const planetes = document.getElementById("resultats");
 
@@ -49,43 +49,7 @@ function remplissage(results) {
     }
 
     //Pagination
-    console.log("Url précédente : " + previousUrl);
-    console.group("Url suivante : " + nextUrl);
-    const currentPage = (previousUrl == null ? parseInt(getPage(nextUrl)) - 1 : parseInt(getPage(previousUrl)) + 1);
-    console.log("Page courante : " + currentPage);
-
-    let firstPage = false;
-    let lastPage = false;
-    if (previousUrl == null) firstPage = true;
-    if (nextUrl == null) lastPage = true;
-    let previousButton = `<button id="prevButton">Page précédente</button>`;
-    let currentButton = `${currentPage}`;
-    let nextButton = `<button id="nextButton">Page suivante</button>`;
-
-    planetes.innerHTML += previousButton;
-    planetes.innerHTML += currentButton;
-    planetes.innerHTML += nextButton;
-
-    if(firstPage){
-        document.getElementById("prevButton").hidden = true;
-    }
-    else{
-        document.getElementById("prevButton").hidden = false;
-    }
-    if(lastPage){
-        document.getElementById("nextButton").hidden = true;
-    }
-    else{
-        document.getElementById("nextButton").hidden = false;
-    }
-
-
-    document.getElementById("prevButton").addEventListener("click", () => {
-        api_call(previousUrl, remplissage);
-    });
-    document.getElementById("nextButton").addEventListener("click", () => {
-        api_call(nextUrl, remplissage);
-    });
+    createPagination(previousUrl, nextUrl, planetes, remplissage);
 }
 
 api_call(API_URL + "/planets", remplissage);
