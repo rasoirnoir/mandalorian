@@ -4,6 +4,7 @@ const planetes = document.getElementById("resultats");
 
 console.log('planet.js loaded');
 
+
 function remplissage(results){
 
     planetes.innerHTML = "";
@@ -48,10 +49,35 @@ function remplissage(results){
     }
 
     //Pagination
-    const currentPage = previousUrl == null ? getPage(nextUrl) - 1 : getPage(previousUrl) + 1;
+    console.log("Url précédente : " + previousUrl);
+    console.group("Url suivante : " + nextUrl);
+    const currentPage = (previousUrl == null ? parseInt(getPage(nextUrl)) - 1 : parseInt(getPage(previousUrl)) + 1);
+    console.log("Page courante : " + currentPage);
+
+    let firstPage = false;
+    let lastPage = false;
+    if(previousUrl == null) firstPage = true;
+    if(nextUrl == null) lastPage = true;
+    let previousButton = `<button id="prevButton">Page précédente</button>`;
+    let currentButton = `${currentPage}`;
+    let nextButton = `<button id="nextButton">Page suivante</button>`;
+    if(!firstPage) {
+        planetes.innerHTML += previousButton;
+        console.log(document.getElementById("prevButton"));
+        document.getElementById("prevButton").addEventListener("click", () => {
+            api_call(previousUrl, remplissage);
+        });
+    }
+    planetes.innerHTML += currentButton;
+    if(!lastPage) {
+        planetes.innerHTML += nextButton;
+        document.getElementById("nextButton").addEventListener("click", () => {
+            api_call(nextUrl, remplissage);
+        });
+    };
+
     
-
+    
 }
-
 
 api_call(API_URL + "/planets", remplissage);
