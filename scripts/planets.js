@@ -1,4 +1,4 @@
-import { api_call, API_URL } from "./util";
+import { api_call, API_URL, getPage } from "./util";
 
 const planetes = document.getElementById("resultats");
 
@@ -48,7 +48,10 @@ function remplissage(results){
     }
 
     //Pagination
+    const currentPage = previousUrl == null ? getPage(nextUrl) - 1 : getPage(previousUrl) + 1;
+    
 
 }
+
 
 api_call(API_URL + "/planets", remplissage);
