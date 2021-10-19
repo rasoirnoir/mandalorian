@@ -21,3 +21,16 @@ export const api_call = (url, callback) => {
         });
 }
 
+/**
+ * Récupère le numéro de la page courante
+ * @param {string} url l'url d'un résultat multipage (qui se termine par ?page=2 par exemple)
+ * @returns Le numéro de la page de l'url
+ */
+export const getPage = (url) => {
+    tabUrl = url.split('/');
+    pageEgal = tabUrl[tabUrl.length - 1];
+    tabPageEgal = pageEgal.split('=');
+    numeroPage = tabPageEgal[tabPageEgal.length - 1];
+
+    return numeroPage;
+}
