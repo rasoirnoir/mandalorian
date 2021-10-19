@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     font-family: 'star-wars', serif;
-    color : #FFF;
+    color : #000;
 }
 
 .titre a{
@@ -23,12 +23,14 @@
 .ul-menu{
     list-style-type: none;
     font-size: large;
+    color : #FFF;
     text-decoration: underline;
     text-decoration-color: #ffe81f;
 }
 
 .ul-menu li{
     display: inline;
+    color : #FFF;
     float: left;
     margin: 1em;
     font-size: large;
@@ -38,6 +40,7 @@
 
 .ul-menu li a{
     display: block;
+    color : #FFF;
     padding: 5px;
     text-align: center;
     font-size: large;
@@ -57,35 +60,42 @@ div.image-films {
     content: url("../assets/imgs/mando.png");
 
 }
-#reponses-films {
-    color : #FFF;
-    float: left; 
-    margin-top : 200px;
-    margin-left:-350px;
-}
 
-#deploiement-films2 {
+.accordeon {
     color : #000;
     float: left; 
-    margin-top : 200px;
+    margin-top : 100px;
+    margin-left: -350px;
 }
-#deploiement-films3 {
-    color : #000;
-    float: left; 
-    margin-top : 200px;
+.accordeon_item{
+    background-color:#ffff;
+    margin:2rem 0;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 30px rgb(196, 196, 196) ;
+    padding-top: 5px;
 }
-#deploiement-films4 {
-    color : #000;
-    float: left; 
-    margin-top : 200px;
+.accordeon_item_header{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
 }
-#deploiement-films5 {
-    color : #000;
-    float: left; 
-    margin-top : 200px;
-}
-#deploiement-films6 {
-    color : #000;
-    float: left; 
-    margin-top : 200px;
-}
+.accordeon_item_body{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  } 
+  
+  .accordeon_item_body_content{
+    color : #000;  
+    padding: 1.5rem;
+    line-height: 1.5rem;
+    
+  }
+  
+  .accordeon_item_header.active + .accordeon_item_body{
+  max-height: 200px;
+  }
