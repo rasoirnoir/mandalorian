@@ -7,34 +7,85 @@
     margin: 0;
     padding: 0;
     font-family: 'star-wars', serif;
+    color : #FFF;
 }
 
 .titre a{
-    text-decoration: none;
+    margin-top : 20px;
+    background-color: transparent;
+    width: 25%;
+    content: url("../assets/imgs/titre.png");
+    font-size: xx-large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
 .ul-menu{
     list-style-type: none;
+    font-size: large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
 .ul-menu li{
     display: inline;
     float: left;
     margin: 1em;
+    font-size: large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
 .ul-menu li a{
     display: block;
     padding: 5px;
     text-align: center;
-    text-decoration: none;
+    font-size: large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
-#background-films {
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment : fixed;
-    background-image: url("../assets/imgs/backgroung_mando.jpg");
+body{
+    background-image: url("../assets/imgs/starry_sky.jpg");
+}
 
+div.image-films {
+    background-color: transparent;
+    margin-top: -170px;
+    margin-left: auto;
+    width: 30%;
+    content: url("../assets/imgs/mando.png");
+
+}
+#reponses-films {
+    color : #FFF;
+    float: left; 
+    margin-top : 200px;
+    margin-left:-350px;
+}
+
+#deploiement-films2 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films3 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films4 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films5 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
+}
+#deploiement-films6 {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
 }
