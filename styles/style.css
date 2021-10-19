@@ -61,6 +61,22 @@ div.image-films {
 
 }
 
+div.image-charactere {
+    background-color: transparent;
+    margin-top: -170px;
+    margin-left: auto;
+    width: 30%;
+    content: url("../assets/imgs/grogu.png");
+}
+
+
+#reponses-films {
+    color : #FFF;
+    float: left; 
+    margin-top : 200px;
+    margin-left:-350px;
+}
+
 .accordeon {
     color : #000;
     float: left; 
