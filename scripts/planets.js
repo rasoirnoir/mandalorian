@@ -4,9 +4,6 @@ const planetes = document.getElementById("resultats");
 
 console.log('planet.js loaded');
 
-api_call(API_URL + "/planets", console.log);
-
-
 function remplissage(results){
 
     const previousUrl = results.previous;
@@ -20,9 +17,17 @@ function remplissage(results){
         const terrain = resultPlanet.terrain;
         const population = resultPlanet.population;
 
-        // const tabResidents = resultPLanet.residents;
-        // const tabResidents = call_api(`people/`);
-        const tabFilms = resultPLanet.films;
+        const tabResidents = resultPLanet.residents;
+        //Problème de requêtes asyncrones
+        // let tabResidents = [];
+        // for(index in resultPlanet.residents){
+        //     api_call(resultPlanet.residents[index], (jsonresp)=>{
+        //         console.log(jsonresp.name);
+        //     });
+        // }
+        // console.log(`${nom} - résidents : ${resultPlanet.residents}`);
+        // console.log(`nom des résidents : ${tabResidents}`);
+        const tabFilms = resultPlanet.films;
 
     }
 
@@ -38,4 +43,4 @@ function remplissage(results){
 </section>`;
 }
 
-// api_call(API_URL + "/planets", remplissage);
+api_call(API_URL + "/planets", remplissage);
