@@ -1,11 +1,10 @@
-import { api_call, API_URL, getPage } from "./util";
+import { api_call, API_URL, createPagination } from "./util";
+
 
 const planetes = document.getElementById("resultats");
 
-console.log('planet.js loaded');
 
-
-function remplissage(results){
+function remplissage(results) {
 
     planetes.innerHTML = "";
 
@@ -13,7 +12,7 @@ function remplissage(results){
     const nextUrl = results.next;
     const tabResults = results.results;
 
-    for(resultPlanet of tabResults){
+    for (resultPlanet of tabResults) {
         const nom = resultPlanet.name;
         const diametre = resultPlanet.diameter;
         const climate = resultPlanet.climate;
@@ -33,8 +32,8 @@ function remplissage(results){
         const tabFilms = resultPlanet.films;
 
 
-        planetes.innerHTML += 
-        `<section class="resultat">
+        planetes.innerHTML +=
+            `<section class="resultat">
             <h1 class="titreAccordeon">${nom}</h1>
             <div class="accordeon">
                 <div class="1">
@@ -49,35 +48,10 @@ function remplissage(results){
     }
 
     //Pagination
-    console.log("Url précédente : " + previousUrl);
-    console.group("Url suivante : " + nextUrl);
-    const currentPage = (previousUrl == null ? parseInt(getPage(nextUrl)) - 1 : parseInt(getPage(previousUrl)) + 1);
-    console.log("Page courante : " + currentPage);
-
-    let firstPage = false;
-    let lastPage = false;
-    if(previousUrl == null) firstPage = true;
-    if(nextUrl == null) lastPage = true;
-    let previousButton = `<button id="prevButton">Page précédente</button>`;
-    let currentButton = `${currentPage}`;
-    let nextButton = `<button id="nextButton">Page suivante</button>`;
-    if(!firstPage) {
-        planetes.innerHTML += previousButton;
-        console.log(document.getElementById("prevButton"));
-        document.getElementById("prevButton").addEventListener("click", () => {
-            api_call(previousUrl, remplissage);
-        });
-    }
-    planetes.innerHTML += currentButton;
-    if(!lastPage) {
-        planetes.innerHTML += nextButton;
-        document.getElementById("nextButton").addEventListener("click", () => {
-            api_call(nextUrl, remplissage);
-        });
-    };
-
-    
-    
+    createPagination(previousUrl, nextUrl, planetes, remplissage);
 }
 
 api_call(API_URL + "/planets", remplissage);
+
+
+console.log('planet.js loaded');
