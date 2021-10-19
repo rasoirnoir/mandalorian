@@ -1,8 +1,7 @@
 import { api_call,API_URL } from "./util";
 
 const PERSONNAGES = document.getElementById("resultats");
-const NAME = document.getElementById("titreaccordeon");
-const PLANETENAISSANCE= document.getElementById("2");
+
 
 class People {
   constructor(birth_year, eye_colo, gender, hair_color,height,mass,skin_color) {
@@ -49,7 +48,7 @@ fetch(API_URL+"/people")
      PERSONNAGES.innerHTML = '';
      const PERPAGE = json.results.length;
      
-     console.log('coucou');
+     
 for (let i = 0; i < PERPAGE; i++) {
   const urlbirth_year = json.results[i].birth_year;
   const urleye_colo=json.results[i].eye_colo;
@@ -64,6 +63,7 @@ for (let i = 0; i < PERPAGE; i++) {
 
   // const gens = new People(urlbirth_year, urleye_colo, urlgender, urlhair_color, urlmass,urlskin_color);
   // console.log(gens);
+//Appel Api pour les planetes :
 
 
   PERSONNAGES.innerHTML += 
