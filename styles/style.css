@@ -33,8 +33,12 @@
 body{
     background-image: url("../assets/imgs/starry_sky.jpg")   
 }
-#background-films {
-    width: auto;
-    background-image: url("");
+
+div.image-films {
+    background-color: transparent;
+    margin-top: 20px;
+    margin-left: auto;
+    width: 30%;
+    content: url("../assets/imgs/mando.png");
 
 }
