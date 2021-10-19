@@ -7,27 +7,42 @@
     margin: 0;
     padding: 0;
     font-family: 'star-wars', serif;
+    color : #FFF;
 }
 
 .titre a{
-    text-decoration: none;
+    margin-top : 20px;
+    background-color: transparent;
+    width: 25%;
+    content: url("../assets/imgs/titre.png");
+    font-size: xx-large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
 .ul-menu{
     list-style-type: none;
+    font-size: large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
 .ul-menu li{
     display: inline;
     float: left;
     margin: 1em;
+    font-size: large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
 .ul-menu li a{
     display: block;
     padding: 5px;
     text-align: center;
-    text-decoration: none;
+    font-size: large;
+    text-decoration: underline;
+    text-decoration-color: #ffe81f;
 }
 
 body{
@@ -36,9 +51,20 @@ body{
 
 div.image-films {
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: -170px;
     margin-left: auto;
     width: 30%;
     content: url("../assets/imgs/mando.png");
 
+}
+#reponses-films {
+    color : #FFF;
+    float: left; 
+    margin-top : 200px;
+}
+
+#deploiement-films {
+    color : #000;
+    float: left; 
+    margin-top : 200px;
 }
