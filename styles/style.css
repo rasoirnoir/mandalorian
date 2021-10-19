@@ -30,11 +30,11 @@
     text-decoration: none;
 }
 
+body{
+    background-image: url("../assets/imgs/starry_sky.jpg")   
+}
 #background-films {
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment : fixed;
-    background-image: url("../assets/imgs/backgroung_mando.jpg");
+    width: auto;
+    background-image: url("");
 
 }

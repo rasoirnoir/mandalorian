@@ -482,7 +482,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel planets.html"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
