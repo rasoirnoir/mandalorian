@@ -1,8 +1,7 @@
 import { api_call, API_URL, createPagination } from "./util";
 
-const planetes = document.getElementById("resultats");
 
-console.log('planet.js loaded');
+const planetes = document.getElementById("resultats");
 
 
 function remplissage(results) {
@@ -53,3 +52,6 @@ function remplissage(results) {
 }
 
 api_call(API_URL + "/planets", remplissage);
+
+
+console.log('planet.js loaded');
