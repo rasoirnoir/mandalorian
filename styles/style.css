@@ -1,3 +1,8 @@
+:root{
+    --jaune: #ffe81f;
+    --blanc: #ccc;
+}
+
 @font-face {
     font-family: 'star-wars';
     src: url("../assets/fonts/Starjedi.ttf");
@@ -7,8 +12,24 @@
     margin: 0;
     padding: 0;
     font-family: 'star-wars', serif;
-    color : #000;
+    /* color: var(--blanc); */
+    color: #000;
+    font-size: 16px;
 }
+
+button{
+    color: #000;
+    padding: 0.2em;
+    margin: 0.2em;
+    border-color: var(--jaune);
+    border-radius: 3%;
+}
+
+body{
+    background-image: url("../assets/imgs/starry_sky.jpg");
+    font-size: 1em;
+}
+
 
 .titre a{
     margin-top : 20px;
@@ -17,61 +38,74 @@
     content: url("../assets/imgs/titre.png");
     font-size: xx-large;
     text-decoration: underline;
-    text-decoration-color: #ffe81f;
+    text-decoration-color: var(--jaune);
+}
+
+.sec-menu{
+    margin: 1em;
+    height: 100%;
 }
 
 .ul-menu{
+    display: flex;
     list-style-type: none;
     font-size: large;
-    color : #FFF;
-    text-decoration: underline;
-    text-decoration-color: #ffe81f;
+    color : var(--blanc);
 }
 
 .ul-menu li{
     display: inline;
-    color : #FFF;
-    float: left;
+    color : var(--blanc);
     margin: 1em;
     font-size: large;
-    text-decoration: underline;
-    text-decoration-color: #ffe81f;
 }
 
 .ul-menu li a{
     display: block;
-    color : #FFF;
+    color : var(--blanc);
     padding: 5px;
     text-align: center;
     font-size: large;
-    text-decoration: underline;
-    text-decoration-color: #ffe81f;
+    text-decoration: none;
+    border-bottom: 2px solid var(--jaune);
 }
 
-body{
-    background-image: url("../assets/imgs/starry_sky.jpg");
+.ul-menu li a:hover{
+    border: 2px solid var(--jaune);
+    /* border-radius: 10%; */
 }
 
-div.image-films {
+/* div.image-films {
     background-color: transparent;
     margin-top: -170px;
     margin-left: auto;
     width: 30%;
     content: url("../assets/imgs/mando.png");
 
+} */
+div.image-films {
+    background-color: transparent;
+    width: 30%;
+    content: url("../assets/imgs/mando.png");
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
 }
 
 div.image-charactere {
     background-color: transparent;
-    margin-top: -170px;
-    margin-left: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
     width: 30%;
     content: url("../assets/imgs/grogu.png");
 }
 
 
 #reponses-films {
-    color : #FFF;
+    color : var(--blanc);
     float: left; 
     margin-top : 200px;
     margin-left:-350px;
@@ -79,12 +113,10 @@ div.image-charactere {
 
 .accordeon {
     color : #000;
-    float: left; 
-    margin-top : 100px;
-    margin-left: -350px;
+    margin: 1em;
 }
 .accordeon_item{
-    background-color:#ffff;
+    background-color:var(--blanc);
     margin:2rem 0;
     border-radius: 1rem;
     box-shadow: 1px 1px 30px rgb(196, 196, 196) ;
@@ -115,3 +147,11 @@ div.image-charactere {
   .accordeon_item_header.active + .accordeon_item_body{
   max-height: 200px;
   }
+
+
+#planets{
+    background-image: url("../assets/imgs/backgroung_dead_trooper.jpg");
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
