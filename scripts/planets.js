@@ -1,18 +1,31 @@
-import { api_call } from "./util";
+import { api_call, API_URL } from "./util";
 
 const planetes = document.getElementById("resultats");
 
 console.log('planet.js loaded');
 
-api_call("planets", console.log);
+api_call(API_URL + "/planets", console.log);
 
 
-function remplissage(prout){
-    console.log(prout.results[0]);
+function remplissage(results){
 
-    api_call("films/1", (response) => {
-        console.log(response);
-    });
+    const previousUrl = results.previous;
+    const nextUrl = results.next;
+    const tabResults = results.results;
+
+    for(resultPlanet of tabResults){
+        const nom = resultPlanet.name;
+        const diametre = resultPlanet.diameter;
+        const climate = resultPlanet.climate;
+        const terrain = resultPlanet.terrain;
+        const population = resultPlanet.population;
+
+        // const tabResidents = resultPLanet.residents;
+        // const tabResidents = call_api(`people/`);
+        const tabFilms = resultPLanet.films;
+
+    }
+
 
     planetes.innerHTML = 
     `<section class="resultat">
@@ -25,4 +38,4 @@ function remplissage(prout){
 </section>`;
 }
 
-api_call("planets", remplissage);
+// api_call(API_URL + "/planets", remplissage);
