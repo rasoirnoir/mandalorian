@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/personnages.js" defer type="module"></script>
     <title>Characters</title>
 </head>
+
 <body>
     <section class="titre"><a href="index.html">STAR WARS</a></section>
     <section class="sec-menu">
@@ -15,9 +18,26 @@
                 <li id="films"><a href="films.html">Films</a></li>
                 <li id="planets"><a href="planets.html">Planets</a></li>
                 <li id="characters"><a href="characters.html">Characters</a></li>
+
             </ul>
         </nav>
+
     </section>
-    
+
+    <section id="recherche">
+        <form action="" id="formRecherche" onSubmit="event.preventDefault(); console.log('click')">
+            <label for="textRecherche">Recherche : </label>
+            <input type="text" name="textRecherche" id="textRecherche">
+            <input type="submit" value="ok">
+        </form>
+    </section>
+
+    <section id="resultats" class="accordeon"></section>
+
+
+    <div class="image-charactere"></div>
+
+
 </body>
+
 </html>
