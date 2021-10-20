@@ -5,8 +5,7 @@ const films = document.getElementById("resultats");
 const API_URL = "https://swapi.dev/api/films/";         // déclare la localisation de la liste des films
 
 function remplissage(EPISODES){
-    // const EPISODES = afficherFilms;      // on déclare qu'un épisode est toujours la fonction avec sa boucle
-        console.log(EPISODES);                             
+            console.log(EPISODES);                             
     
         for(index in EPISODES.results){
             films.innerHTML +=`
