@@ -12,6 +12,10 @@ function remplissage(results) {
     const nextUrl = results.next;
     const tabResults = results.results;
 
+    planetsItems = [];
+    residentsArray = [];
+    filmsArray = [];
+
     for (resultPlanet of tabResults) {
         const nom = resultPlanet.name;
         const diametre = resultPlanet.diameter;
@@ -21,6 +25,8 @@ function remplissage(results) {
 
         const tabResidents = resultPlanet.residents;
         const tabFilms = resultPlanet.films;
+        residentsArray.push(tabResidents);
+        filmsArray.push(tabFilms);
 
 
         planetes.innerHTML +=
@@ -38,35 +44,56 @@ function remplissage(results) {
         </section>`;
 
         const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
-        item = accordeonItemHeader[accordeonItemHeader.length - 1];
-        item.addEventListener("click", event => {
-            accordeonItemHeader.classList.toggle("active");
-            api_call_array(tabResidents, fillDetails);
-            api_call_array(tabFilms, fillDetails);
+        console.log(accordeonItemHeader[accordeonItemHeader.length - 1]);
+        accordeonItemHeader[accordeonItemHeader.length - 1].addEventListener("click", function (event) {
+            console.log(`click on `);
+            console.log(event.target);
+            accordeonItemHeader[accordeonItemHeader.length - 1].classList.toggle("active");
+            // api_call_array(residentsArray[index], fillDetails);
+            // api_call_array(filmsArray[index], fillDetails);
         });
-
-        //Pagination
-        createPagination(previousUrl, nextUrl, planetes, remplissage);
-
-        // const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
-        // accordeonItemHeader.forEach(accordeonItemHeader => {
-        //     accordeonItemHeader.addEventListener("click", event => {
-        //         accordeonItemHeader.classList.toggle("active");
-        //         api_call_array(tabResidents, fillDetails);
-        //         api_call_array(tabFilms, fillDetails);
-        //     });
-        // });
     }
-
-    const fillResidents = (jsonResp) => {
-        console.log(jsonResp);
-    }
-
-    const fillFilms = (jsonResp) => {
-        console.log(jsonResp);
-    }
-
-    api_call(API_URL + "/planets", remplissage);
+    // item = accordeonItemHeader[accordeonItemHeader.length - 1];
+    // planetsItems.push(item);
 
 
-    console.log('planet.js loaded');
+
+
+
+    //Pagination
+    createPagination(previousUrl, nextUrl, planetes, remplissage);
+
+
+    // for(index in planetsItems){
+    //     console.log(planetsItems[index]);
+    //     planetsItems[index].addEventListener("click", function(event){
+    //         console.log(`click on ${event.target}`);
+    //         planetsItems[index].classList.toggle("active");
+    //         // api_call_array(residentsArray[index], fillDetails);
+    //         // api_call_array(filmsArray[index], fillDetails);
+    //     });
+    // }
+    // const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
+    // accordeonItemHeader.forEach(accordeonItemHeader => {
+    //     accordeonItemHeader.addEventListener("click", event => {
+    //         accordeonItemHeader.classList.toggle("active");
+    //         api_call_array(tabResidents, fillDetails);
+    //         api_call_array(tabFilms, fillDetails);
+    //     });
+    // });
+
+}
+
+const fillResidents = (jsonResp) => {
+    console.log(jsonResp);
+}
+
+const fillFilms = (jsonResp) => {
+    console.log(jsonResp);
+}
+
+
+api_call(API_URL + "/planets", remplissage);
+
+
+console.log('planet.js loaded');
