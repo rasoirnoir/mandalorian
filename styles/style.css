@@ -85,14 +85,21 @@ form input{
     /* border-radius: 10%; */
 }
 
-/* div.image-films {
+#bienvenue{
+    text-align: center;
     background-color: transparent;
-    margin-top: -170px;
-    margin-left: auto;
-    width: 30%;
-    content: url("../assets/imgs/mando.png");
+    font-size: 100px;
+    color :var(--jaune) ;
+    text-decoration: underline;
+    text-decoration-color: var(--jaune) ;
+}
+#presentation {
+    text-align: center;
+    background-color: transparent;
+    font-size: 40px;
+    color :var(--jaune)
+}
 
-} */
 div.image-films {
     background-color: transparent;
     width: 30%;
