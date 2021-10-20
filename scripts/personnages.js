@@ -70,15 +70,16 @@ for (let i = 0; i < PERPAGE; i++) {
   `<section class="resultat accordeon_item">
     <h1 class="accordeon_item_header">${urlname}</h1>
     <div class="accordeon_item_body">
-        <div class="1">
-        <div id=annéeNaissance>Année de Naissance : ${urlbirth_year} </div>
-        <div id=couleurYeux> Couleur des Yeux : ${urleye_colo}</div>
-        <div id=genre>Genre : ${urlgender}</div>
-        <div id=couleurCheveux> Couleur des Cheveux : ${urlhair_color} </div>
-        <div id= poids> Poids du personnage : ${urlmass}  kg</div>
-        <div id= couleurPeau> Couleur de Peau : ${urlskin_color} </div>
-        <div class="2"> Planète de Naissance : ${urlhomeworld}</div>
-        <div class="3"> Film où je suis présent : ${urlfilms}</div>
+        <div class="column1">
+          <div id=annéeNaissance>Année de Naissance : ${urlbirth_year} </div>
+          <div id=couleurYeux> Couleur des Yeux : ${urleye_colo}</div>
+          <div id=genre>Genre : ${urlgender}</div>
+          <div id=couleurCheveux> Couleur des Cheveux : ${urlhair_color} </div>
+          <div id= poids> Poids du personnage : ${urlmass}  kg</div>
+          <div id= couleurPeau> Couleur de Peau : ${urlskin_color} </div>
+        </div>
+        <div class="column2"> Planète de Naissance : ${urlhomeworld}</div>
+        <div class="column3"> Film où je suis présent : ${urlfilms}</div>
     </div>
 </section>`;
 

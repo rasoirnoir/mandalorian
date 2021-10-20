@@ -20,15 +20,6 @@ function remplissage(results) {
         const population = resultPlanet.population;
 
         const tabResidents = resultPlanet.residents;
-        //Problème de requêtes asyncrones
-        // let tabResidents = [];
-        // for(index in resultPlanet.residents){
-        //     api_call(resultPlanet.residents[index], (jsonresp)=>{
-        //         console.log(jsonresp.name);
-        //     });
-        // }
-        // console.log(`${nom} - résidents : ${resultPlanet.residents}`);
-        // console.log(`nom des résidents : ${tabResidents}`);
         const tabFilms = resultPlanet.films;
 
 
@@ -36,16 +27,19 @@ function remplissage(results) {
             `<section class="resultat accordeon_item">
             <h1 class="accordeon_item_header">${nom}</h1>
             <div class="accordeon_item_body">
-                <div class="1">
+                <div class="column1">
                     <p>${terrain}</p>
                     <p>${climate}</p>
                     <p>${diametre}Km</p>
                 </div>
-                <div class="2">${tabResidents}</div>
-                <div class="3">${tabFilms}</div>
+                <div class="column2">${tabResidents}</div>
+                <div class="column3">${tabFilms}</div>
             </div>
         </section>`;
     }
+
+    //Pagination
+    createPagination(previousUrl, nextUrl, planetes, remplissage);
 
     const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
     for (item of accordeonItemHeader) {
@@ -53,9 +47,6 @@ function remplissage(results) {
             item.classList.toggle("active");
         });
     }
-
-    //Pagination
-    createPagination(previousUrl, nextUrl, planetes, remplissage);
 }
 
 api_call(API_URL + "/planets", remplissage);
