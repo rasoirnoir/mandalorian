@@ -30,6 +30,16 @@ body{
     font-size: 1em;
 }
 
+form label{
+    margin: 0.5em;
+    color: var(--blanc);
+}
+
+form input{
+    border-color: var(--jaune);
+    border-radius: 3%;
+    padding: 0.3em;
+}
 
 .titre a{
     margin-top : 20px;
@@ -147,8 +157,11 @@ div.image-charactere {
   .accordeon_item_body_content{
     color : #000;  
     padding: 1.5rem;
-    line-height: 1.5rem;
-    
+    line-height: 1.5rem;    
+  }
+
+  .column1, .column2, .column3{
+      padding: 1em;
   }
   
   .accordeon_item_header.active + .accordeon_item_body{
