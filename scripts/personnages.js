@@ -4,7 +4,7 @@ const PERSONNAGES = document.getElementById("resultats");
 
 
 class People {
-    constructor(birth_year, eye_colo, gender, hair_color, height, mass, skin_color) {
+    constructor(birth_year, eye_color, gender, hair_color, height, mass, skin_color) {
         this.birth_year = birth_year;
         this.eye_colo = eye_colo;
         this.gender = gender;
@@ -54,7 +54,7 @@ function remplissage(json) {
 
     for (let i = 0; i < PERPAGE; i++) {
         const urlbirth_year = json.results[i].birth_year;
-        const urleye_colo = json.results[i].eye_colo;
+        const urleye_color = json.results[i].eye_color;
         const urlgender = json.results[i].gender;
         const urlhair_color = json.results[i].hair_color;
         const urlheight = json.results[i].height;
@@ -75,7 +75,7 @@ function remplissage(json) {
                 <div class="accordeon_item_body">
                     <div class="column1">
                         <div id=annéeNaissance>Année de Naissance : ${urlbirth_year} </div>
-                        <div id=couleurYeux> Couleur des Yeux : ${urleye_colo}</div>
+                        <div id=couleurYeux> Couleur des Yeux : ${urleye_color}</div>
                         <div id=genre>Genre : ${urlgender}</div>
                         <div id=couleurCheveux> Couleur des Cheveux : ${urlhair_color} </div>
                         <div id= poids> Poids du personnage : ${urlmass}  kg</div>
