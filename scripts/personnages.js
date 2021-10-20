@@ -86,10 +86,11 @@ console.log('personnage.js loaded');
       </div>
     </section>`;
 
-
+    }
     //Pagination
     createPagination(previousUrl, nextUrl, PERSONNAGES, remplissage);
 }
 
 api_call(API_URL + "/people", remplissage);
 console.log('personnage.js loaded');
+

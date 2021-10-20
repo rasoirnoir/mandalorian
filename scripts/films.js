@@ -1,7 +1,9 @@
 import { api_call } from './util';
 
 const films = document.getElementById("resultats");
+const search = document.getElementById('recherche');
 
+const API_SEARCH = "https://swapi.dev/api/films/?search"
 const API_URL = "https://swapi.dev/api/films/";         // déclare la localisation de la liste des films
 
 function remplissage(EPISODES){
@@ -26,6 +28,14 @@ function remplissage(EPISODES){
 })
         })
     }
+
+function envoiForm(event){
+
+    event.preventDefault();
+    api_call(API_SEARCH+search, remplissage)
+    console.log(formenvoyé);
+
+}
 
 
 api_call(API_URL, remplissage);
