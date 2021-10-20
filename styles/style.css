@@ -152,6 +152,7 @@ div.image-charactere {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    display: flex;
   } 
   
   .accordeon_item_body_content{

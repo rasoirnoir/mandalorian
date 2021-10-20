@@ -22,6 +22,30 @@ export const api_call = (url, callback) => {
 }
 
 /**
+ * Envoi un tableau d'url vers l'api swapi
+ * @param {array} urlArray Un tableau d'url
+ * @param {function} callback La finction de callback qui traitera la réponse de l'api
+ */
+export const api_call_array = (urlArray, callback) => {
+    let promises = urlArray.map((url) => {
+        fetch(url).catch(error => {
+            console.log("Erreur :(");
+        });
+
+        Promise.all(promises)
+            .then(response => {
+                return response.json();
+            })
+            .then(jsonResp => {
+                callback(jsonResp);
+            })
+            .catch(error => {
+                console.log("Error :(");
+            })
+    })
+}
+
+/**
  * Récupère le numéro de la page courante
  * @param {string} url l'url d'un résultat multipage (qui se termine par ?page=2 par exemple)
  * @returns Le numéro de la page de l'url

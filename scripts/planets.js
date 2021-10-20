@@ -1,4 +1,4 @@
-import { api_call, API_URL, createPagination } from "./util";
+import { api_call, API_URL, createPagination, api_call_array } from "./util";
 
 
 const planetes = document.getElementById("resultats");
@@ -36,20 +36,37 @@ function remplissage(results) {
                 <div class="column3">${tabFilms}</div>
             </div>
         </section>`;
+
+        const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
+        item = accordeonItemHeader[accordeonItemHeader.length - 1];
+        item.addEventListener("click", event => {
+            accordeonItemHeader.classList.toggle("active");
+            api_call_array(tabResidents, fillDetails);
+            api_call_array(tabFilms, fillDetails);
+        });
+
+        //Pagination
+        createPagination(previousUrl, nextUrl, planetes, remplissage);
+
+        // const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
+        // accordeonItemHeader.forEach(accordeonItemHeader => {
+        //     accordeonItemHeader.addEventListener("click", event => {
+        //         accordeonItemHeader.classList.toggle("active");
+        //         api_call_array(tabResidents, fillDetails);
+        //         api_call_array(tabFilms, fillDetails);
+        //     });
+        // });
     }
 
-    //Pagination
-    createPagination(previousUrl, nextUrl, planetes, remplissage);
+    const fillResidents = (jsonResp) => {
+        console.log(jsonResp);
+    }
 
-    const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
-    accordeonItemHeader.forEach(accordeonItemHeader => {
-        accordeonItemHeader.addEventListener("click", event => {
-            accordeonItemHeader.classList.toggle("active");
-        });
-    });
-}
+    const fillFilms = (jsonResp) => {
+        console.log(jsonResp);
+    }
 
-api_call(API_URL + "/planets", remplissage);
+    api_call(API_URL + "/planets", remplissage);
 
 
-console.log('planet.js loaded');
+    console.log('planet.js loaded');
