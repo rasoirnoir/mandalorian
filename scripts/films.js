@@ -1,7 +1,7 @@
 import { api_call } from './util';
 
 const films = document.getElementById("resultats");
-const search = document.getElementById('recherche');
+const search = document.getElementById('formRecherche');
 
 const API_SEARCH = "https://swapi.dev/api/films/?search"
 const API_URL = "https://swapi.dev/api/films/";         // déclare la localisation de la liste des films
@@ -25,19 +25,23 @@ function remplissage(EPISODES) {
     }
     const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
     accordeonItemHeader.forEach(accordeonItemHeader => {
-        accordeonItemHeader.addEventListener("click", event => {
-            accordeonItemHeader.classList.toggle("active");
+    accordeonItemHeader.addEventListener("click", event => {
+    accordeonItemHeader.classList.toggle("active");
         })
     })
 }
 
-function envoiForm(event){
+search.addEventListener("submit", ()=> {
+    function envoiForm(event){
+        console.log(search.value);
+        api_call(API_SEARCH+search.value, remplissage)
+        console.log(formenvoyé);
 
-    event.preventDefault();
-    api_call(API_SEARCH+search, remplissage)
-    console.log(formenvoyé);
+        
+    
+    }
 
-}
+})
 
 
 api_call(API_URL, remplissage);
