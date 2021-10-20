@@ -43,7 +43,7 @@ export const api_call = (url, callback) => {
  */
 export const createPagination = (prevUrl, nextUrl, elementParent, remplissage) => {
     console.log("Url précédente : " + prevUrl);
-    console.group("Url suivante : " + nextUrl);
+    console.log("Url suivante : " + nextUrl);
     const currentPage = (prevUrl == null ? parseInt(getPage(nextUrl)) - 1 : parseInt(getPage(prevUrl)) + 1);
     console.log("Page courante : " + currentPage);
 
