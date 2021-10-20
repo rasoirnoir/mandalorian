@@ -42,11 +42,11 @@ function remplissage(results) {
     createPagination(previousUrl, nextUrl, planetes, remplissage);
 
     const accordeonItemHeader = document.querySelectorAll(".accordeon_item_header");
-    for (item of accordeonItemHeader) {
-        item.addEventListener("click", (event) => {
-            item.classList.toggle("active");
+    accordeonItemHeader.forEach(accordeonItemHeader => {
+        accordeonItemHeader.addEventListener("click", event => {
+            accordeonItemHeader.classList.toggle("active");
         });
-    }
+    });
 }
 
 api_call(API_URL + "/planets", remplissage);
